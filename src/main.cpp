@@ -119,6 +119,8 @@ private:
 
     void cleanup()
     {
+        vkWaitForFences(device, 1, &inFlightFence, VK_TRUE, UINT64_MAX);
+
         vkDestroySemaphore(device, imageAvailableSemaphore, nullptr);
         vkDestroySemaphore(device, renderFinishedSemaphore, nullptr);
         vkDestroyFence(device, inFlightFence, nullptr);

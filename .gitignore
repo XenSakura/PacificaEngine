@@ -30,3 +30,20 @@
 *.exe
 *.out
 *.app
+
+# Build directories
+[Bb]in/
+[Oo]bj/
+build/
+CMakeBuild/
+x64/
+Debug/
+Release/
+
+# Visual Studio specific
+.vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates

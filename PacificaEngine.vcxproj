@@ -76,14 +76,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glm;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\include;C:\VulkanSDK\1.4.309.0\Include;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glm;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\stb;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -94,7 +94,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glm;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\include;C:\VulkanSDK\1.4.309.0\Include;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glm;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\stb;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -103,7 +103,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -112,14 +112,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glm;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\include;C:\VulkanSDK\1.4.309.0\Include;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glm;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\stb;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -130,7 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glm;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\include;C:\VulkanSDK\1.4.309.0\Include;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glm;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\include;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\stb;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -139,7 +139,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;C:\Users\Sakura\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;C:\Users\sakur\Documents\Visual Studio 2022\Libraries\glfw-3.4.bin.WIN64\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

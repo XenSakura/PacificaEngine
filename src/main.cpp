@@ -38,6 +38,11 @@
 const std::string MODEL_PATH = "models/viking_room.obj";
 const std::string TEXTURE_PATH = "textures/viking_room.png";
 
+//imgui for debugging
+#include "imgui.h"
+#include "backends/imgui_impl_glfw.h"
+#include "backends/imgui_impl_vulkan.h"
+
 
 
 struct Vertex
@@ -45,6 +50,7 @@ struct Vertex
     glm::vec3 pos;
     glm::vec3 color;
     glm::vec2 texCoord;
+    glm::vec3 normal;
 
     static VkVertexInputBindingDescription getBindingDescription()
     {
@@ -55,9 +61,9 @@ struct Vertex
         return bindingDescription;
     }
 
-    static std::array<VkVertexInputAttributeDescription, 3> getAttributeDescriptions()
+    static std::array<VkVertexInputAttributeDescription, 4> getAttributeDescriptions()
     {
-        std::array<VkVertexInputAttributeDescription, 3> attributeDescriptions{};
+        std::array<VkVertexInputAttributeDescription, 4> attributeDescriptions{};
         //vec 3 pos
         attributeDescriptions[0].binding = 0;
         attributeDescriptions[0].location = 0;
@@ -74,12 +80,18 @@ struct Vertex
         attributeDescriptions[2].format = VK_FORMAT_R32G32_SFLOAT;
         attributeDescriptions[2].offset = offsetof(Vertex, texCoord);
 
+        //normal for lighting
+        attributeDescriptions[3].binding = 0;
+        attributeDescriptions[3].location = 3;
+        attributeDescriptions[3].format = VK_FORMAT_R32G32B32_SFLOAT;
+        attributeDescriptions[3].offset = offsetof(Vertex, normal);
+
         return attributeDescriptions;
     }
 
     //operator override for hash table
     bool operator==(const Vertex& other) const {
-        return pos == other.pos && color == other.color && texCoord == other.texCoord;
+        return pos == other.pos && color == other.color && texCoord == other.texCoord && normal == other.normal;
     }
 };
 namespace std {
@@ -97,6 +109,13 @@ struct UniformBufferObject
     glm::mat4 model;
     glm::mat4 view;
     glm::mat4 proj;
+};
+
+struct Light
+{
+    glm::vec3 position;
+    float _pad = 0.0f;
+    glm::vec4 color;
 };
 
 static std::vector<char> readFile(const std::string& filename)
@@ -197,6 +216,7 @@ private:
         createVertexBuffer();
         createIndexBuffer();
         createUniformBuffers();
+        createLightBuffers();
         createDescriptorPool();
         createDescriptorSets();
         createCommandBuffer();
@@ -209,6 +229,7 @@ private:
         {
             glfwPollEvents();
             drawFrame();
+            
         }
     }
 
@@ -229,6 +250,9 @@ private:
         {
             vkDestroyBuffer(device, uniformBuffers[i], nullptr);
             vkFreeMemory(device, uniformBuffersMemory[i], nullptr);
+
+            vkDestroyBuffer(device, lightUniformBuffer[i], nullptr);
+            vkFreeMemory(device, lightUniformBufferMemory[i], nullptr);
         }
         vkDestroyDescriptorPool(device, descriptorPool, nullptr);
 
@@ -1229,6 +1253,7 @@ private:
 
         //updating the model
         updateUniformBuffer(currentFrame);
+        updateLightBuffer(currentFrame);
 
         VkSubmitInfo submitInfo{};
         submitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
@@ -1450,7 +1475,14 @@ private:
         samplerLayoutBinding.pImmutableSamplers = nullptr;
         samplerLayoutBinding.stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
 
-        std::array<VkDescriptorSetLayoutBinding, 2> bindings = { uboLayoutBinding, samplerLayoutBinding };
+        VkDescriptorSetLayoutBinding lightingLayoutBinding{};
+        lightingLayoutBinding.binding = 2;
+        lightingLayoutBinding.descriptorCount = 1;
+        lightingLayoutBinding.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+        lightingLayoutBinding.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
+        lightingLayoutBinding.pImmutableSamplers = nullptr;
+
+        std::array<VkDescriptorSetLayoutBinding, 3> bindings = { uboLayoutBinding, samplerLayoutBinding, lightingLayoutBinding };
 
         VkDescriptorSetLayoutCreateInfo layoutInfo{};
         layoutInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
@@ -1512,7 +1544,12 @@ private:
             imageInfo.imageView = textureImageView;
             imageInfo.sampler = textureSampler;
 
-            std::array<VkWriteDescriptorSet,2> descriptorWrites{};
+            VkDescriptorBufferInfo lightBufferInfo{};
+            lightBufferInfo.buffer = lightUniformBuffer[i];
+            lightBufferInfo.offset = 0;
+            lightBufferInfo.range = sizeof(Light);
+
+            std::array<VkWriteDescriptorSet,3> descriptorWrites{};
             descriptorWrites[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
             descriptorWrites[0].dstSet = descriptorSets[i];
             descriptorWrites[0].dstBinding = 0;
@@ -1528,6 +1565,14 @@ private:
             descriptorWrites[1].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
             descriptorWrites[1].descriptorCount = 1;
             descriptorWrites[1].pImageInfo = &imageInfo;
+
+            descriptorWrites[2].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+            descriptorWrites[2].dstSet = descriptorSets[i];
+            descriptorWrites[2].dstBinding = 2;
+            descriptorWrites[2].dstArrayElement = 0;
+            descriptorWrites[2].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+            descriptorWrites[2].descriptorCount = 1;
+            descriptorWrites[2].pBufferInfo = &lightBufferInfo;
 
             vkUpdateDescriptorSets(device, static_cast<uint32_t>(descriptorWrites.size()), descriptorWrites.data(), 0, nullptr);
         }
@@ -2000,6 +2045,20 @@ private:
 
                 vertex.color = { 1.0f, 1.0f, 1.0f };
 
+                if (index.normal_index >= 0)
+                {
+                    vertex.normal = {
+                    attrib.normals[3 * index.normal_index + 0],
+                    attrib.normals[3 * index.normal_index + 1],
+                    attrib.normals[3 * index.normal_index + 2]
+                    };
+                }
+                else
+                {
+                    vertex.normal = glm::vec3(0.0f);
+                }
+                
+
                 if (uniqueVertices.count(vertex) == 0) {
                     uniqueVertices[vertex] = static_cast<uint32_t>(vertices.size());
                     vertices.push_back(vertex);
@@ -2039,7 +2098,36 @@ private:
         colorImageView = createImageView(colorImage, colorFormat, VK_IMAGE_ASPECT_COLOR_BIT, 1);
     }
 
-    
+    Light light = {
+    glm::vec3(1.0f, 1.0f, 1.0f),
+    0.0f,
+    glm::vec4(0.6f, 0.0f, 0.6f, 0.9f)
+    };
+    std::vector<VkBuffer> lightUniformBuffer;
+    std::vector<VkDeviceMemory> lightUniformBufferMemory;
+    std::vector<void*> lightUniformBuffersMapped;
+
+    void createLightBuffers()
+    {
+        VkDeviceSize bufferSize = sizeof(Light);
+
+        lightUniformBuffer.resize(MAX_FRAMES_IN_FLIGHT);
+        lightUniformBufferMemory.resize(MAX_FRAMES_IN_FLIGHT);
+        lightUniformBuffersMapped.resize(MAX_FRAMES_IN_FLIGHT);
+
+        for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++)
+        {
+            createBuffer(bufferSize, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT, lightUniformBuffer[i], lightUniformBufferMemory[i]);
+
+            vkMapMemory(device, lightUniformBufferMemory[i], 0, bufferSize, 0, &lightUniformBuffersMapped[i]);
+        }
+    }
+
+    void updateLightBuffer(uint32_t currentImage)
+    {
+        memcpy(lightUniformBuffersMapped[currentImage], &light, sizeof(light));
+    }
+
 };
 
 int main() {

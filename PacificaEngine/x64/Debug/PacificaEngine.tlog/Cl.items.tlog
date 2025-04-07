@@ -1,1 +1,8 @@
+D:\VulkanEngine\PacificaEngine\libraries\imgui-master\backends\imgui_impl_glfw.cpp;D:\VulkanEngine\PacificaEngine\PacificaEngine\x64\Debug\imgui_impl_glfw.obj
+D:\VulkanEngine\PacificaEngine\libraries\imgui-master\backends\imgui_impl_vulkan.cpp;D:\VulkanEngine\PacificaEngine\PacificaEngine\x64\Debug\imgui_impl_vulkan.obj
+D:\VulkanEngine\PacificaEngine\libraries\imgui-master\imgui.cpp;D:\VulkanEngine\PacificaEngine\PacificaEngine\x64\Debug\imgui.obj
+D:\VulkanEngine\PacificaEngine\libraries\imgui-master\imgui_demo.cpp;D:\VulkanEngine\PacificaEngine\PacificaEngine\x64\Debug\imgui_demo.obj
+D:\VulkanEngine\PacificaEngine\libraries\imgui-master\imgui_draw.cpp;D:\VulkanEngine\PacificaEngine\PacificaEngine\x64\Debug\imgui_draw.obj
+D:\VulkanEngine\PacificaEngine\libraries\imgui-master\imgui_tables.cpp;D:\VulkanEngine\PacificaEngine\PacificaEngine\x64\Debug\imgui_tables.obj
+D:\VulkanEngine\PacificaEngine\libraries\imgui-master\imgui_widgets.cpp;D:\VulkanEngine\PacificaEngine\PacificaEngine\x64\Debug\imgui_widgets.obj
 D:\VulkanEngine\PacificaEngine\src\main.cpp;D:\VulkanEngine\PacificaEngine\PacificaEngine\x64\Debug\main.obj

@@ -1318,9 +1318,7 @@ private:
         createSwapChain();
         createImageViews();
         createDepthResources();
-        createImageViews();
         createColorResources();
-        createDepthResources();
         createFramebuffers();
     }
 

@@ -2101,7 +2101,7 @@ private:
     Light light = {
     glm::vec3(1.0f, 1.0f, 1.0f),
     0.0f,
-    glm::vec4(0.6f, 0.0f, 0.6f, 0.9f)
+    glm::vec4(1.0f, 1.0f, 1.0f, 0.1f)
     };
     std::vector<VkBuffer> lightUniformBuffer;
     std::vector<VkDeviceMemory> lightUniformBufferMemory;

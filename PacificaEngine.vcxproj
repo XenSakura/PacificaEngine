@@ -76,14 +76,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;C:\VulkanMemoryAllocator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.4.313.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -94,7 +94,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;C:\VulkanMemoryAllocator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -103,7 +103,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.4.313.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -112,14 +112,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;C:\VulkanMemoryAllocator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.4.313.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -130,7 +130,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.280.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;C:\VulkanMemoryAllocator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -139,7 +139,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\VulkanSDK\1.3.280.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\VulkanSDK\1.4.313.0\Lib;$(ProjectDir)libraries\glfw\lib-vc2022;C:\VulkanSDK\1.4.309.0\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -150,16 +150,24 @@
     <ClCompile Include="libraries\imgui-master\imgui_draw.cpp" />
     <ClCompile Include="libraries\imgui-master\imgui_tables.cpp" />
     <ClCompile Include="libraries\imgui-master\imgui_widgets.cpp" />
+    <ClCompile Include="src\core\Window.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Renderer.cpp" />
-    <ClCompile Include="src\VulkanEngine.cpp" />
-    <ClCompile Include="src\Window.cpp" />
+    <ClCompile Include="src\renderer\VulkanDevice.cpp" />
+    <ClCompile Include="src\renderer\VulkanInstance.cpp" />
+    <ClCompile Include="src\renderer\VulkanPipeline.cpp" />
+    <ClCompile Include="src\renderer\VulkanPlatform.cpp" />
+    <ClCompile Include="src\renderer\VulkanSurface.cpp" />
+    <ClCompile Include="src\renderer\VulkanSwapchain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\core\Window.h" />
     <ClInclude Include="src\main.h" />
-    <ClInclude Include="src\Renderer.h" />
-    <ClInclude Include="src\VulkanEngine.h" />
-    <ClInclude Include="src\Window.h" />
+    <ClInclude Include="src\renderer\VulkanDevice.h" />
+    <ClInclude Include="src\renderer\VulkanInstance.h" />
+    <ClInclude Include="src\renderer\VulkanPipeline.h" />
+    <ClInclude Include="src\renderer\VulkanPlatform.h" />
+    <ClInclude Include="src\renderer\VulkanSurface.h" />
+    <ClInclude Include="src\renderer\VulkanSwapchain.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

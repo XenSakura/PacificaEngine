@@ -16,6 +16,15 @@
     <Filter Include="imgui">
       <UniqueIdentifier>{b9d23cf6-50b2-4170-83eb-74982011c20f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{50f65736-073e-41d1-a49c-1933a30d9227}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\renderer">
+      <UniqueIdentifier>{41a53ad7-fed3-4aa3-ae4a-fc6ff1d19863}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resources">
+      <UniqueIdentifier>{1a78b036-99e5-44f1-b49e-ee61700c84f8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -42,28 +51,52 @@
     <ClCompile Include="libraries\imgui-master\backends\imgui_impl_vulkan.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Renderer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\core\Window.cpp">
+      <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Window.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\renderer\VulkanInstance.cpp">
+      <Filter>Source Files\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\VulkanEngine.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\renderer\VulkanPlatform.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\VulkanDevice.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\VulkanSurface.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\VulkanSwapchain.cpp">
+      <Filter>Source Files\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\VulkanPipeline.cpp">
+      <Filter>Source Files\renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\main.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Renderer.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="src\core\Window.h">
+      <Filter>Source Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Window.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="src\renderer\VulkanInstance.h">
+      <Filter>Source Files\renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\VulkanEngine.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="src\renderer\VulkanPlatform.h">
+      <Filter>Source Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\VulkanDevice.h">
+      <Filter>Source Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\VulkanSurface.h">
+      <Filter>Source Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\VulkanSwapchain.h">
+      <Filter>Source Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\VulkanPipeline.h">
+      <Filter>Source Files\renderer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

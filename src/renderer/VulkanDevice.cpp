@@ -25,7 +25,7 @@ VkPhysicalDevice VulkanDevice::pickPhysicalDevice(VkInstance instance, VkSurface
     vkEnumeratePhysicalDevices(instance, &deviceCount, devices.data());
 
     for (const auto& device : devices) {
-        if (isDeviceSuitable(device, surface)) {
+        if ( isDeviceSuitable(device, surface)) {
             physicalDevice = device;
             /*msaaSamples = getMaxUsableSampleCount();*/
             break;

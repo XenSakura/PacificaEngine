@@ -39,6 +39,7 @@ CMakeBuild/
 x64/
 Debug/
 Release/
+PacificaEngine/
 
 # Visual Studio specific
 .vscode/

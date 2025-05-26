@@ -162,6 +162,7 @@
   <ItemGroup>
     <ClInclude Include="src\core\Window.h" />
     <ClInclude Include="src\main.h" />
+    <ClInclude Include="src\renderer\IAPIPlatform.h" />
     <ClInclude Include="src\renderer\VulkanDevice.h" />
     <ClInclude Include="src\renderer\VulkanInstance.h" />
     <ClInclude Include="src\renderer\VulkanPipeline.h" />

@@ -98,5 +98,8 @@
     <ClInclude Include="src\renderer\VulkanPipeline.h">
       <Filter>Source Files\renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\renderer\IAPIPlatform.h">
+      <Filter>Source Files\renderer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

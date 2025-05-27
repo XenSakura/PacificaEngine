@@ -1,7 +1,7 @@
 #pragma once
 
-
-#include "vulkan/vulkan.h"
+//TBD refactor for CPP features
+#include "vulkan/vulkan.hpp"
 #include <iostream>
 #include <vector>
 

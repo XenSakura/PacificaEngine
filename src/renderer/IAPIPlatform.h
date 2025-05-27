@@ -15,4 +15,7 @@ class IAPIPlatform
 
 	virtual void present() = 0;
 
+	virtual bool reloadShaders() = 0;
+	//// Use hot-reload the shaders
+	//virtual bool reloadShaders(Resources& res, Scene& scene) = 0;
 };

@@ -7,4 +7,6 @@ namespace Vulkan
 	bool destroySwapchain(RenderContext& context);
 
 	bool createSwapchainImageViews(RenderContext& context);
+
+	bool destroySwapchainImageViews(RenderContext& context);
 }

@@ -4,6 +4,7 @@
 #include "VulkanDebug.h"
 #include "VulkanSurface.h"
 #include "VulkanDevice.h"
+#include "VulkanSwapchain.h"
 using namespace Vulkan;
 
 VulkanPlatform::VulkanPlatform()
@@ -26,11 +27,17 @@ void VulkanPlatform::Initialize()
 	bool surface_result = createVkSurface(m_instance, m_surface);
 	bool physicaldevice_result = pickPhysicalDevice(m_physicalDevice, m_instance, m_surface);
 	bool device_result = createLogicalDevice(m_context, m_physicalDevice, m_surface);
+	bool swapchain_result = createSwapchain(m_context, m_physicalDevice, m_surface);
+	bool imageviews_result = createSwapchainImageViews(m_context);
 
 }
 
 void VulkanPlatform::Shutdown()
 {
+	
+
+	destroySwapchain(m_context);
+
 	destroyLogicalDevice(m_context);
 
 	destroyVkSurface(m_instance, m_surface);

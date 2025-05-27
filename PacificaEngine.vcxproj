@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -152,7 +152,9 @@
     <ClCompile Include="libraries\imgui-master\imgui_widgets.cpp" />
     <ClCompile Include="src\core\Window.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\renderer\VulkanDebug.cpp" />
     <ClCompile Include="src\renderer\VulkanDevice.cpp" />
+    <ClCompile Include="src\renderer\VulkanImageViews.cpp" />
     <ClCompile Include="src\renderer\VulkanInstance.cpp" />
     <ClCompile Include="src\renderer\VulkanPipeline.cpp" />
     <ClCompile Include="src\renderer\VulkanPlatform.cpp" />
@@ -162,8 +164,12 @@
   <ItemGroup>
     <ClInclude Include="src\core\Window.h" />
     <ClInclude Include="src\main.h" />
+    <ClInclude Include="src\renderer\Camera.h" />
     <ClInclude Include="src\renderer\IAPIPlatform.h" />
+    <ClInclude Include="src\renderer\PacificaCommon.h" />
+    <ClInclude Include="src\renderer\VulkanDebug.h" />
     <ClInclude Include="src\renderer\VulkanDevice.h" />
+    <ClInclude Include="src\renderer\VulkanImageViews.h" />
     <ClInclude Include="src\renderer\VulkanInstance.h" />
     <ClInclude Include="src\renderer\VulkanPipeline.h" />
     <ClInclude Include="src\renderer\VulkanPlatform.h" />

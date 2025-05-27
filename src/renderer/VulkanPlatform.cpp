@@ -29,6 +29,7 @@ void VulkanPlatform::Initialize()
 	bool device_result = createLogicalDevice(m_context, m_physicalDevice, m_surface);
 	bool swapchain_result = createSwapchain(m_context, m_physicalDevice, m_surface);
 	bool imageviews_result = createSwapchainImageViews(m_context);
+	
 
 }
 

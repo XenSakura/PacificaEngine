@@ -13,23 +13,11 @@ public:
 	~VulkanPlatform();
 	bool m_initialized;
 	void Initialize() override;
-
+	
 	void Shutdown() override;
 private:
 	//only need one of each
-
-	RenderContext m_context;
-
-	Window& m_window;
-
-	VkDebugUtilsMessengerEXT m_debugMessenger;
-	
-	VkInstance m_instance;
-
-	VkSurfaceKHR m_surface;
-
-	VkPhysicalDevice m_physicalDevice;
-
+	Window m_window;
 
 
 };

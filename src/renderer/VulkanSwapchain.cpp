@@ -2,9 +2,11 @@
 
 VulkanSwapchain::VulkanSwapchain(VulkanDevice& device, vk::SurfaceKHR& surface, uint32_t width, uint32_t height)
     :m_deviceRef(device),
-    m_surface(surface)
+    m_surface(surface),
+    m_width(width),
+    m_height(height)
 {
-    createSwapchain(width, height);
+    createSwapchain();
     createImageViews();
 }
 
@@ -13,7 +15,7 @@ VulkanSwapchain::~VulkanSwapchain()
     destroySwapchain();
 }
 
-void VulkanSwapchain::createSwapchain(uint32_t width, uint32_t height)
+void VulkanSwapchain::createSwapchain()
 {
 
     struct SM {
@@ -28,7 +30,7 @@ void VulkanSwapchain::createSwapchain(uint32_t width, uint32_t height)
     auto formats = m_deviceRef.m_pdevice.getSurfaceFormatsKHR(m_surface);
 
     m_format = vk::Format::eB8G8R8A8Unorm;
-    m_extent = vk::Extent2D{ width, height };
+    m_extent = vk::Extent2D{ m_width, m_height };
 
     vk::SwapchainCreateInfoKHR swapChainCreateInfo({}, m_surface, swapchainImagesCount, m_format,
         vk::ColorSpaceKHR::eSrgbNonlinear, m_extent, 1, vk::ImageUsageFlagBits::eColorAttachment,
@@ -67,8 +69,10 @@ void VulkanSwapchain::createImageViews()
 
 void VulkanSwapchain::recreateSwapchain(uint32_t newWidth, uint32_t newHeight)
 {
+    m_width = newWidth;
+    m_height = newHeight;
     m_deviceRef.m_device.waitIdle(); // Wait for device to finish using old swapchain
     destroySwapchain();  // Destroy image views + old swapchain
-    createSwapchain(newWidth, newHeight); // Recreate with new size
+    createSwapchain(); // Recreate with new size
     createImageViews(); // Recreate image views
 }

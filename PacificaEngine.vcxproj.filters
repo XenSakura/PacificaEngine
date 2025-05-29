@@ -66,7 +66,7 @@
     <ClCompile Include="src\renderer\VulkanSwapchain.cpp">
       <Filter>Source Files\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\renderer\VulkanPipelineManager.cpp">
+    <ClCompile Include="src\renderer\VulkanPipelineBuilder.cpp">
       <Filter>Source Files\renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\renderer\ShaderManager.cpp">
@@ -98,7 +98,7 @@
     <ClInclude Include="src\renderer\VulkanSwapchain.h">
       <Filter>Source Files\renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\renderer\VulkanPipelineManager.h">
+    <ClInclude Include="src\renderer\VulkanPipelineBuilder.h">
       <Filter>Source Files\renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\renderer\IAPIPlatform.h">

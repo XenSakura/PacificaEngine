@@ -2,8 +2,11 @@
 #include "vulkan/vulkan.hpp"
 #include <unordered_map>
 #include <string>
+#include "ShaderManager.h"
+#include "VulkanSwapchain.h"
 struct VulkanPipeline
 {
+	std::string pipelineName;
 	vk::Pipeline m_pipeline;
 	vk::PipelineLayout m_layout;
 };
@@ -23,12 +26,12 @@ struct PipelineDescriptor {
 class VulkanPipelineBuilder
 {
 public:
-	VulkanPipelineBuilder(vk::Device& device, vk::Extent2D extent);
+	VulkanPipelineBuilder(const vk::Device& device, const VulkanSwapchain& swapchain);
 	~VulkanPipelineBuilder();
-	VulkanPipeline& BuildPipeline();
-	VulkanPipeline& GetPipeline();
+	void BuildPipeline(const std::string& name, VulkanShader& vertShader, VulkanShader& fragShader);
+	VulkanPipeline& GetPipeline(const std::string& name);
 private:
 	std::unordered_map<std::string, VulkanPipeline> m_pipelineMap;
-	vk::Device& m_device;
-	vk::Extent2D& m_extent;
+	const vk::Device& m_device;
+	const VulkanSwapchain& m_swapchain;
 };

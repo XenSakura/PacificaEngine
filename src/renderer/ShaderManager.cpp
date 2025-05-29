@@ -95,3 +95,8 @@ void ShaderManager::HotReload()
 			
 	}
 }
+
+vk::ShaderModule ShaderManager::get(const std::string name)
+{
+	return m_shaderMap[name].module;
+}

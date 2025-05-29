@@ -155,7 +155,7 @@
     <ClCompile Include="src\renderer\VulkanDebug.cpp" />
     <ClCompile Include="src\renderer\VulkanDevice.cpp" />
     <ClCompile Include="src\renderer\VulkanInstance.cpp" />
-    <ClCompile Include="src\renderer\VulkanPipelineManager.cpp" />
+    <ClCompile Include="src\renderer\VulkanPipelineBuilder.cpp" />
     <ClCompile Include="src\renderer\VulkanPlatform.cpp" />
     <ClCompile Include="src\renderer\VulkanSurface.cpp" />
     <ClCompile Include="src\renderer\VulkanSwapchain.cpp" />
@@ -170,7 +170,7 @@
     <ClInclude Include="src\renderer\VulkanDebug.h" />
     <ClInclude Include="src\renderer\VulkanDevice.h" />
     <ClInclude Include="src\renderer\VulkanInstance.h" />
-    <ClInclude Include="src\renderer\VulkanPipelineManager.h" />
+    <ClInclude Include="src\renderer\VulkanPipelineBuilder.h" />
     <ClInclude Include="src\renderer\VulkanPlatform.h" />
     <ClInclude Include="src\renderer\VulkanSurface.h" />
     <ClInclude Include="src\renderer\VulkanSwapchain.h" />

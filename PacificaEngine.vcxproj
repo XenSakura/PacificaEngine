@@ -77,7 +77,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;C:\VulkanMemoryAllocator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -95,7 +95,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;C:\VulkanMemoryAllocator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -113,7 +113,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;C:\VulkanMemoryAllocator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,7 +131,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\VulkanSDK\1.4.313.0\Include;C:\VulkanSDK\1.4.309.0\Include;$(ProjectDir)libraries\glm;$(ProjectDir)libraries\glfw\Include;$(ProjectDir)libraries\stb;$(ProjectDir)libraries\obj_loader;$(ProjectDir)libraries\imgui-master;C:\VulkanMemoryAllocator\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -150,20 +150,18 @@
     <ClCompile Include="libraries\imgui-master\imgui_draw.cpp" />
     <ClCompile Include="libraries\imgui-master\imgui_tables.cpp" />
     <ClCompile Include="libraries\imgui-master\imgui_widgets.cpp" />
-    <ClCompile Include="src\core\Window.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\renderer\ShaderManager.cpp" />
     <ClCompile Include="src\renderer\VulkanDebug.cpp" />
     <ClCompile Include="src\renderer\VulkanDevice.cpp" />
-    <ClCompile Include="src\renderer\VulkanImageViews.cpp" />
     <ClCompile Include="src\renderer\VulkanInstance.cpp" />
-    <ClCompile Include="src\renderer\VulkanPipeline.cpp" />
+    <ClCompile Include="src\renderer\VulkanPipelineManager.cpp" />
     <ClCompile Include="src\renderer\VulkanPlatform.cpp" />
     <ClCompile Include="src\renderer\VulkanSurface.cpp" />
     <ClCompile Include="src\renderer\VulkanSwapchain.cpp" />
+    <ClCompile Include="src\renderer\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\core\Window.h" />
     <ClInclude Include="src\main.h" />
     <ClInclude Include="src\renderer\Camera.h" />
     <ClInclude Include="src\renderer\IAPIPlatform.h" />
@@ -171,12 +169,12 @@
     <ClInclude Include="src\renderer\ShaderManager.h" />
     <ClInclude Include="src\renderer\VulkanDebug.h" />
     <ClInclude Include="src\renderer\VulkanDevice.h" />
-    <ClInclude Include="src\renderer\VulkanImageViews.h" />
     <ClInclude Include="src\renderer\VulkanInstance.h" />
-    <ClInclude Include="src\renderer\VulkanPipeline.h" />
+    <ClInclude Include="src\renderer\VulkanPipelineManager.h" />
     <ClInclude Include="src\renderer\VulkanPlatform.h" />
     <ClInclude Include="src\renderer\VulkanSurface.h" />
     <ClInclude Include="src\renderer\VulkanSwapchain.h" />
+    <ClInclude Include="src\renderer\Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

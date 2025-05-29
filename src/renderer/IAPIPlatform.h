@@ -1,7 +1,13 @@
 #pragma once
+#include "..\core\Window.h"
+#include "ShaderManager.h"
 
 class IAPIPlatform
 {
+public:
+	IAPIPlatform();
+	~IAPIPlatform();
+private:
 	virtual void Initialize() = 0;
 	virtual void Shutdown() = 0;
 
@@ -18,4 +24,6 @@ class IAPIPlatform
 	virtual bool reloadShaders() = 0;
 	//// Use hot-reload the shaders
 	//virtual bool reloadShaders(Resources& res, Scene& scene) = 0;
+	Window m_window;
+	ShaderManager m_shaderManager;
 };

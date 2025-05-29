@@ -6,6 +6,11 @@ void Window::framebufferResizeCallback(GLFWwindow* window, int width, int height
     auto app = reinterpret_cast<Window*>(glfwGetWindowUserPointer(window));
     app->framebufferResized = true;
 }
+static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) {
+        glfwSetWindowShouldClose(window, GLFW_TRUE);
+    }
+}
 
 Window::Window()
 {
@@ -16,6 +21,7 @@ Window::Window()
     width = WINDOW_WIDTH;
     height = WINDOW_HEIGHT;
     window = glfwCreateWindow(width, height, "Vulkan", nullptr, nullptr);
+    glfwSetKeyCallback(window, key_callback);
     glfwSetWindowUserPointer(window, this);
     glfwSetFramebufferSizeCallback(window, framebufferResizeCallback);
 }

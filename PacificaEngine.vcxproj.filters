@@ -51,9 +51,6 @@
     <ClCompile Include="libraries\imgui-master\backends\imgui_impl_vulkan.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\Window.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
     <ClCompile Include="src\renderer\VulkanInstance.cpp">
       <Filter>Source Files\renderer</Filter>
     </ClCompile>
@@ -69,7 +66,7 @@
     <ClCompile Include="src\renderer\VulkanSwapchain.cpp">
       <Filter>Source Files\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\renderer\VulkanPipeline.cpp">
+    <ClCompile Include="src\renderer\VulkanPipelineManager.cpp">
       <Filter>Source Files\renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\renderer\ShaderManager.cpp">
@@ -78,16 +75,13 @@
     <ClCompile Include="src\renderer\VulkanDebug.cpp">
       <Filter>Source Files\renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\renderer\VulkanImageViews.cpp">
+    <ClCompile Include="src\renderer\Window.cpp">
       <Filter>Source Files\renderer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\main.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\core\Window.h">
-      <Filter>Source Files\core</Filter>
     </ClInclude>
     <ClInclude Include="src\renderer\VulkanInstance.h">
       <Filter>Source Files\renderer</Filter>
@@ -104,13 +98,10 @@
     <ClInclude Include="src\renderer\VulkanSwapchain.h">
       <Filter>Source Files\renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\renderer\VulkanPipeline.h">
+    <ClInclude Include="src\renderer\VulkanPipelineManager.h">
       <Filter>Source Files\renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\renderer\IAPIPlatform.h">
-      <Filter>Source Files\renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\renderer\VulkanImageViews.h">
       <Filter>Source Files\renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\renderer\VulkanDebug.h">
@@ -123,6 +114,9 @@
       <Filter>Source Files\renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\renderer\ShaderManager.h">
+      <Filter>Source Files\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\Window.h">
       <Filter>Source Files\renderer</Filter>
     </ClInclude>
   </ItemGroup>

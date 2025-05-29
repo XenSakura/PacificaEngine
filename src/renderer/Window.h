@@ -11,19 +11,14 @@ public:
 
     GLFWwindow* window = nullptr;
     
-    bool framebufferResized = false;
+    Window();
+    ~Window();
 
     uint32_t width = WINDOW_WIDTH;
     uint32_t height = WINDOW_HEIGHT;
 
+    bool framebufferResized = false;
+
 private:
-    
-
-    
-
-    // Private constructor & destructor
-    Window();
-    ~Window();
-
     static void framebufferResizeCallback(GLFWwindow* window, int width, int height);
 };
